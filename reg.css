@@ -1,0 +1,36 @@
+.bd{
+    align-items : center;
+}
+
+
+body{
+    color: aqua;
+    align-items: center;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    width: calc(100);
+    text-indent: 10px;
+    text-transform: capitalize;
+    line-height: 0.8;
+    padding: 10px;
+    margin: 20px;
+    
+
+}
+form{
+    align-items: center;
+    padding: 10px;
+}
+.form-control{
+    padding: 10px;
+}
+.btn{
+    padding: 10px;
+}
+.form-control small{
+    visibility: hidden;
+}
+.form-control i{
+    visibility: hidden;
+}

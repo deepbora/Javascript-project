@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="reg.css">
+</head>
+<body class="bd">
+    <div class="container">
+        <div class="header">
+            <h1>Registration Form</h1>
+        </div>
+    </div>
+    <form class="form" id="form">
+        <div class="form-control">
+            <label>User Name</label>
+            <input type="text" name="" id="username" placeholder="Enter your full name" autocomplete="off">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Msg</small>
+        </div>
+
+        <div class="form-control">
+            <label>Email</label>
+            <input type="email" name="" id="email" placeholder="Enter your email">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Msg</small>
+        </div>
+
+        <div class="form-control">
+            <label>Phone number</label>
+            <input type="number" name="" id="phone" placeholder="Enter your phone number" autocomplete="off">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Msg</small>
+        </div>
+
+        <div class="form-control">
+            <label>Password</label>
+            <input type="password" name="" id="pass" placeholder="Enter your Password" autocomplete="off">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Msg</small>
+        </div>
+
+        <div class="form-control">
+            <label>Confirm Password</label>
+            <input type="password" name="" id="Conpass" placeholder="Enter your Confirm Password" autocomplete="off">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error Msg</small>
+        </div>
+        <input type="submit" value="submit" name="" class="btn">
+    </form>
+
+
+    <script>//firtly asses the value
+        const form = document.getElementById("form");
+        const username = document.getElementById("username");
+        const email = document.getElementById("email")
+        const phone = document.getElementById("phone");
+        const pass = document.getElementById("pass");
+        const Conpass = document.getElementById("Conpass");
+
+
+        //add event
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+            validate();
+        })
+
+        //define validate function
+
+      
+        const usernameval =username.value.trim();
+        const emailval   = email.value.trim();
+        const phoneval   = phone.value.trim();
+        const passvalval   = pass.value.trim();
+        const Conpassval   =Conpass.value.trim();
+
+        //more email validate
+
+        const isEmail = (emailval) =>{
+
+        }
+
+        //validation
+
+        if(usernameval === ""){
+            setErrormsg('username', 'field can not be blank');
+        }else if(username.lenght <= 2) {
+
+            setErrormsg('username', 'field can not be less den 2 ');
+
+        }else{
+            setSuccessMsg('username');
+        }
+
+        if(emailval === ""){
+            setErrormsg('email', 'field can not be blank');
+        }else if(!isEmail(emailval)) {
+
+            setErrormsg('emailval', 'field can not be less den 2 ');
+
+        }else{
+            setSuccessMsg('email');
+        }
+
+        function setErrormsg(input, errormsg){
+            const formcontrol = input.parentElement;
+            const small = formcontrol.querySelector('small')
+            small.innerText = errormsg;
+
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
